@@ -14,6 +14,7 @@
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -26,7 +27,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -153,6 +153,12 @@
     <Compile Include="Form9.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Member.Designer.vb">
+      <DependentUpon>Member.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Member.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MemberDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -160,6 +166,11 @@
     </Compile>
     <Compile Include="MemberDataSet.vb">
       <DependentUpon>MemberDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="memberRegistrationDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>memberRegistrationDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -197,6 +208,17 @@
     <Compile Include="SatffDataSet.vb">
       <DependentUpon>SatffDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Staff.Designer.vb">
+      <DependentUpon>Staff.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Staff.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="staffDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>staffDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="UserLogin.Designer.vb">
       <DependentUpon>UserLogin.vb</DependentUpon>
     </Compile>
@@ -233,6 +255,9 @@
     <EmbeddedResource Include="Form9.resx">
       <DependentUpon>Form9.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Member.resx">
+      <DependentUpon>Member.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Home.resx">
       <DependentUpon>Home.vb</DependentUpon>
     </EmbeddedResource>
@@ -244,6 +269,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Staff.resx">
+      <DependentUpon>Staff.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserLogin.resx">
       <DependentUpon>UserLogin.vb</DependentUpon>
@@ -272,6 +300,17 @@
     <None Include="MemberDataSet.xss">
       <DependentUpon>MemberDataSet.xsd</DependentUpon>
     </None>
+    <None Include="memberRegistrationDataSet.xsc">
+      <DependentUpon>memberRegistrationDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="memberRegistrationDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>memberRegistrationDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="memberRegistrationDataSet.xss">
+      <DependentUpon>memberRegistrationDataSet.xsd</DependentUpon>
+    </None>
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
@@ -294,11 +333,36 @@
     <None Include="SatffDataSet.xss">
       <DependentUpon>SatffDataSet.xsd</DependentUpon>
     </None>
+    <None Include="staffDataSet.xsc">
+      <DependentUpon>staffDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="staffDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>staffDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="staffDataSet.xss">
+      <DependentUpon>staffDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Member.mdf" />
+    <Content Include="memberRegistration.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="memberRegistration_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>memberRegistration.mdf</DependentUpon>
+    </Content>
     <Content Include="Member_log.ldf">
       <DependentUpon>Member.mdf</DependentUpon>
+    </Content>
+    <Content Include="staff.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="staff_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>staff.mdf</DependentUpon>
     </Content>
     <None Include="Resources\WhatsApp Image 2020-07-18 at 7.05.23 PM.jpeg" />
     <None Include="Resources\WoodBackground54342.jpg" />

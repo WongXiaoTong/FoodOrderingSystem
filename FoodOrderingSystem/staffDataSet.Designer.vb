@@ -20,12 +20,12 @@ Option Explicit On
  Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
  Global.System.ComponentModel.ToolboxItem(true),  _
  Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema"),  _
- Global.System.Xml.Serialization.XmlRootAttribute("SatffDataSet"),  _
+ Global.System.Xml.Serialization.XmlRootAttribute("staffDataSet"),  _
  Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")>  _
-Partial Public Class SatffDataSet
+Partial Public Class staffDataSet
     Inherits Global.System.Data.DataSet
     
-    Private tableStaff As StaffDataTable
+    Private tableTable As TableDataTable
     
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
@@ -56,8 +56,8 @@ Partial Public Class SatffDataSet
         If (Me.DetermineSchemaSerializationMode(info, context) = Global.System.Data.SchemaSerializationMode.IncludeSchema) Then
             Dim ds As Global.System.Data.DataSet = New Global.System.Data.DataSet()
             ds.ReadXmlSchema(New Global.System.Xml.XmlTextReader(New Global.System.IO.StringReader(strSchema)))
-            If (Not (ds.Tables("Staff")) Is Nothing) Then
-                MyBase.Tables.Add(New StaffDataTable(ds.Tables("Staff")))
+            If (Not (ds.Tables("Table")) Is Nothing) Then
+                MyBase.Tables.Add(New TableDataTable(ds.Tables("Table")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -80,9 +80,9 @@ Partial Public Class SatffDataSet
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property Staff() As StaffDataTable
+    Public ReadOnly Property Table() As TableDataTable
         Get
-            Return Me.tableStaff
+            Return Me.tableTable
         End Get
     End Property
     
@@ -128,7 +128,7 @@ Partial Public Class SatffDataSet
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Public Overrides Function Clone() As Global.System.Data.DataSet
-        Dim cln As SatffDataSet = CType(MyBase.Clone,SatffDataSet)
+        Dim cln As staffDataSet = CType(MyBase.Clone,staffDataSet)
         cln.InitVars
         cln.SchemaSerializationMode = Me.SchemaSerializationMode
         Return cln
@@ -153,8 +153,8 @@ Partial Public Class SatffDataSet
             Me.Reset
             Dim ds As Global.System.Data.DataSet = New Global.System.Data.DataSet()
             ds.ReadXml(reader)
-            If (Not (ds.Tables("Staff")) Is Nothing) Then
-                MyBase.Tables.Add(New StaffDataTable(ds.Tables("Staff")))
+            If (Not (ds.Tables("Table")) Is Nothing) Then
+                MyBase.Tables.Add(New TableDataTable(ds.Tables("Table")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -188,10 +188,10 @@ Partial Public Class SatffDataSet
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Friend Overloads Sub InitVars(ByVal initTable As Boolean)
-        Me.tableStaff = CType(MyBase.Tables("Staff"),StaffDataTable)
+        Me.tableTable = CType(MyBase.Tables("Table"),TableDataTable)
         If (initTable = true) Then
-            If (Not (Me.tableStaff) Is Nothing) Then
-                Me.tableStaff.InitVars
+            If (Not (Me.tableTable) Is Nothing) Then
+                Me.tableTable.InitVars
             End If
         End If
     End Sub
@@ -199,18 +199,18 @@ Partial Public Class SatffDataSet
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Private Sub InitClass()
-        Me.DataSetName = "SatffDataSet"
+        Me.DataSetName = "staffDataSet"
         Me.Prefix = ""
-        Me.Namespace = "http://tempuri.org/SatffDataSet.xsd"
+        Me.Namespace = "http://tempuri.org/staffDataSet.xsd"
         Me.EnforceConstraints = true
         Me.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
-        Me.tableStaff = New StaffDataTable()
-        MyBase.Tables.Add(Me.tableStaff)
+        Me.tableTable = New TableDataTable()
+        MyBase.Tables.Add(Me.tableTable)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Private Function ShouldSerializeStaff() As Boolean
+    Private Function ShouldSerializeTable() As Boolean
         Return false
     End Function
     
@@ -225,7 +225,7 @@ Partial Public Class SatffDataSet
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Public Shared Function GetTypedDataSetSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
-        Dim ds As SatffDataSet = New SatffDataSet()
+        Dim ds As staffDataSet = New staffDataSet()
         Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
         Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
         Dim any As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
@@ -273,29 +273,33 @@ Partial Public Class SatffDataSet
     End Function
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Public Delegate Sub StaffRowChangeEventHandler(ByVal sender As Object, ByVal e As StaffRowChangeEvent)
+    Public Delegate Sub TableRowChangeEventHandler(ByVal sender As Object, ByVal e As TableRowChangeEvent)
     
     '''<summary>
     '''Represents the strongly named DataTable class.
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class StaffDataTable
-        Inherits Global.System.Data.TypedTableBase(Of StaffRow)
+    Partial Public Class TableDataTable
+        Inherits Global.System.Data.TypedTableBase(Of TableRow)
         
         Private columnId As Global.System.Data.DataColumn
         
-        Private columnUser_Type As Global.System.Data.DataColumn
+        Private columnStaff_Name As Global.System.Data.DataColumn
         
-        Private columnUser_Name As Global.System.Data.DataColumn
+        Private columnDepartment As Global.System.Data.DataColumn
+        
+        Private columnIC_Number As Global.System.Data.DataColumn
         
         Private columnPassword As Global.System.Data.DataColumn
+        
+        Private columnPhone_No As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub New()
             MyBase.New
-            Me.TableName = "Staff"
+            Me.TableName = "Table"
             Me.BeginInit
             Me.InitClass
             Me.EndInit
@@ -336,17 +340,25 @@ Partial Public Class SatffDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property User_TypeColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property Staff_NameColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnUser_Type
+                Return Me.columnStaff_Name
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property User_NameColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property DepartmentColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnUser_Name
+                Return Me.columnDepartment
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property IC_NumberColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnIC_Number
             End Get
         End Property
         
@@ -355,6 +367,14 @@ Partial Public Class SatffDataSet
         Public ReadOnly Property PasswordColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnPassword
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property Phone_NoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnPhone_No
             End Get
         End Property
         
@@ -369,50 +389,50 @@ Partial Public Class SatffDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As StaffRow
+        Public Default ReadOnly Property Item(ByVal index As Integer) As TableRow
             Get
-                Return CType(Me.Rows(index),StaffRow)
+                Return CType(Me.Rows(index),TableRow)
             End Get
         End Property
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event StaffRowChanging As StaffRowChangeEventHandler
+        Public Event TableRowChanging As TableRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event StaffRowChanged As StaffRowChangeEventHandler
+        Public Event TableRowChanged As TableRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event StaffRowDeleting As StaffRowChangeEventHandler
+        Public Event TableRowDeleting As TableRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event StaffRowDeleted As StaffRowChangeEventHandler
+        Public Event TableRowDeleted As TableRowChangeEventHandler
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Sub AddStaffRow(ByVal row As StaffRow)
+        Public Overloads Sub AddTableRow(ByVal row As TableRow)
             Me.Rows.Add(row)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Function AddStaffRow(ByVal User_Type As Boolean, ByVal User_Name As String, ByVal Password As String) As StaffRow
-            Dim rowStaffRow As StaffRow = CType(Me.NewRow,StaffRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, User_Type, User_Name, Password}
-            rowStaffRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowStaffRow)
-            Return rowStaffRow
+        Public Overloads Function AddTableRow(ByVal Staff_Name As String, ByVal Department As String, ByVal IC_Number As Integer, ByVal Password As String, ByVal Phone_No As Integer) As TableRow
+            Dim rowTableRow As TableRow = CType(Me.NewRow,TableRow)
+            Dim columnValuesArray() As Object = New Object() {Nothing, Staff_Name, Department, IC_Number, Password, Phone_No}
+            rowTableRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowTableRow)
+            Return rowTableRow
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function FindById(ByVal Id As Integer) As StaffRow
-            Return CType(Me.Rows.Find(New Object() {Id}),StaffRow)
+        Public Function FindById(ByVal Id As Integer) As TableRow
+            Return CType(Me.Rows.Find(New Object() {Id}),TableRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As StaffDataTable = CType(MyBase.Clone,StaffDataTable)
+            Dim cln As TableDataTable = CType(MyBase.Clone,TableDataTable)
             cln.InitVars
             Return cln
         End Function
@@ -420,16 +440,18 @@ Partial Public Class SatffDataSet
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New StaffDataTable()
+            Return New TableDataTable()
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Friend Sub InitVars()
             Me.columnId = MyBase.Columns("Id")
-            Me.columnUser_Type = MyBase.Columns("User Type")
-            Me.columnUser_Name = MyBase.Columns("User Name")
+            Me.columnStaff_Name = MyBase.Columns("Staff Name")
+            Me.columnDepartment = MyBase.Columns("Department")
+            Me.columnIC_Number = MyBase.Columns("IC Number")
             Me.columnPassword = MyBase.Columns("Password")
+            Me.columnPhone_No = MyBase.Columns("Phone No")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -437,44 +459,59 @@ Partial Public Class SatffDataSet
         Private Sub InitClass()
             Me.columnId = New Global.System.Data.DataColumn("Id", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnId)
-            Me.columnUser_Type = New Global.System.Data.DataColumn("User Type", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnUser_Type)
-            Me.columnUser_Name = New Global.System.Data.DataColumn("User Name", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnUser_Name)
+            Me.columnStaff_Name = New Global.System.Data.DataColumn("Staff Name", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnStaff_Name)
+            Me.columnDepartment = New Global.System.Data.DataColumn("Department", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnDepartment)
+            Me.columnIC_Number = New Global.System.Data.DataColumn("IC Number", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnIC_Number)
             Me.columnPassword = New Global.System.Data.DataColumn("Password", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnPassword)
+            Me.columnPhone_No = New Global.System.Data.DataColumn("Phone No", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnPhone_No)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnId}, true))
             Me.columnId.AutoIncrement = true
+            Me.columnId.AutoIncrementSeed = -1
+            Me.columnId.AutoIncrementStep = -1
             Me.columnId.AllowDBNull = false
+            Me.columnId.ReadOnly = true
             Me.columnId.Unique = true
-            Me.columnUser_Name.MaxLength = 100
+            Me.columnStaff_Name.MaxLength = 50
+            Me.columnDepartment.MaxLength = 50
             Me.columnPassword.MaxLength = 50
+            Me.ExtendedProperties.Add("Generator_RowClassName", "TableRow")
+            Me.ExtendedProperties.Add("Generator_RowEvArgName", "TableRowChangeEvent")
+            Me.ExtendedProperties.Add("Generator_RowEvHandlerName", "TableRowChangeEventHandler")
+            Me.ExtendedProperties.Add("Generator_TableClassName", "TableDataTable")
+            Me.ExtendedProperties.Add("Generator_TablePropName", "Table")
+            Me.ExtendedProperties.Add("Generator_TableVarName", "tableTable")
+            Me.ExtendedProperties.Add("Generator_UserTableName", "Table")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function NewStaffRow() As StaffRow
-            Return CType(Me.NewRow,StaffRow)
+        Public Function NewTableRow() As TableRow
+            Return CType(Me.NewRow,TableRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New StaffRow(builder)
+            Return New TableRow(builder)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(StaffRow)
+            Return GetType(TableRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanged(e)
-            If (Not (Me.StaffRowChangedEvent) Is Nothing) Then
-                RaiseEvent StaffRowChanged(Me, New StaffRowChangeEvent(CType(e.Row,StaffRow), e.Action))
+            If (Not (Me.TableRowChangedEvent) Is Nothing) Then
+                RaiseEvent TableRowChanged(Me, New TableRowChangeEvent(CType(e.Row,TableRow), e.Action))
             End If
         End Sub
         
@@ -482,8 +519,8 @@ Partial Public Class SatffDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanging(e)
-            If (Not (Me.StaffRowChangingEvent) Is Nothing) Then
-                RaiseEvent StaffRowChanging(Me, New StaffRowChangeEvent(CType(e.Row,StaffRow), e.Action))
+            If (Not (Me.TableRowChangingEvent) Is Nothing) Then
+                RaiseEvent TableRowChanging(Me, New TableRowChangeEvent(CType(e.Row,TableRow), e.Action))
             End If
         End Sub
         
@@ -491,8 +528,8 @@ Partial Public Class SatffDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleted(e)
-            If (Not (Me.StaffRowDeletedEvent) Is Nothing) Then
-                RaiseEvent StaffRowDeleted(Me, New StaffRowChangeEvent(CType(e.Row,StaffRow), e.Action))
+            If (Not (Me.TableRowDeletedEvent) Is Nothing) Then
+                RaiseEvent TableRowDeleted(Me, New TableRowChangeEvent(CType(e.Row,TableRow), e.Action))
             End If
         End Sub
         
@@ -500,14 +537,14 @@ Partial Public Class SatffDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleting(e)
-            If (Not (Me.StaffRowDeletingEvent) Is Nothing) Then
-                RaiseEvent StaffRowDeleting(Me, New StaffRowChangeEvent(CType(e.Row,StaffRow), e.Action))
+            If (Not (Me.TableRowDeletingEvent) Is Nothing) Then
+                RaiseEvent TableRowDeleting(Me, New TableRowChangeEvent(CType(e.Row,TableRow), e.Action))
             End If
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub RemoveStaffRow(ByVal row As StaffRow)
+        Public Sub RemoveTableRow(ByVal row As TableRow)
             Me.Rows.Remove(row)
         End Sub
         
@@ -516,7 +553,7 @@ Partial Public Class SatffDataSet
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As SatffDataSet = New SatffDataSet()
+            Dim ds As staffDataSet = New staffDataSet()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -534,7 +571,7 @@ Partial Public Class SatffDataSet
             type.Attributes.Add(attribute1)
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "StaffDataTable"
+            attribute2.FixedValue = "TableDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -581,56 +618,71 @@ Partial Public Class SatffDataSet
     '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
-    Partial Public Class StaffRow
+    Partial Public Class TableRow
         Inherits Global.System.Data.DataRow
         
-        Private tableStaff As StaffDataTable
+        Private tableTable As TableDataTable
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
             MyBase.New(rb)
-            Me.tableStaff = CType(Me.Table,StaffDataTable)
+            Me.tableTable = CType(Me.Table,TableDataTable)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Property Id() As Integer
             Get
-                Return CType(Me(Me.tableStaff.IdColumn),Integer)
+                Return CType(Me(Me.tableTable.IdColumn),Integer)
             End Get
             Set
-                Me(Me.tableStaff.IdColumn) = value
+                Me(Me.tableTable.IdColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property User_Type() As Boolean
+        Public Property Staff_Name() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableStaff.User_TypeColumn),Boolean)
+                    Return CType(Me(Me.tableTable.Staff_NameColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'User Type' in table 'Staff' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Staff Name' in table 'Table' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableStaff.User_TypeColumn) = value
+                Me(Me.tableTable.Staff_NameColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property User_Name() As String
+        Public Property Department() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableStaff.User_NameColumn),String)
+                    Return CType(Me(Me.tableTable.DepartmentColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'User Name' in table 'Staff' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Department' in table 'Table' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableStaff.User_NameColumn) = value
+                Me(Me.tableTable.DepartmentColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property IC_Number() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tableTable.IC_NumberColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'IC Number' in table 'Table' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableTable.IC_NumberColumn) = value
             End Set
         End Property
         
@@ -639,50 +691,89 @@ Partial Public Class SatffDataSet
         Public Property Password() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableStaff.PasswordColumn),String)
+                    Return CType(Me(Me.tableTable.PasswordColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Password' in table 'Staff' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Password' in table 'Table' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableStaff.PasswordColumn) = value
+                Me(Me.tableTable.PasswordColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IsUser_TypeNull() As Boolean
-            Return Me.IsNull(Me.tableStaff.User_TypeColumn)
+        Public Property Phone_No() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tableTable.Phone_NoColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Phone No' in table 'Table' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableTable.Phone_NoColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsStaff_NameNull() As Boolean
+            Return Me.IsNull(Me.tableTable.Staff_NameColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SetUser_TypeNull()
-            Me(Me.tableStaff.User_TypeColumn) = Global.System.Convert.DBNull
+        Public Sub SetStaff_NameNull()
+            Me(Me.tableTable.Staff_NameColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IsUser_NameNull() As Boolean
-            Return Me.IsNull(Me.tableStaff.User_NameColumn)
+        Public Function IsDepartmentNull() As Boolean
+            Return Me.IsNull(Me.tableTable.DepartmentColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SetUser_NameNull()
-            Me(Me.tableStaff.User_NameColumn) = Global.System.Convert.DBNull
+        Public Sub SetDepartmentNull()
+            Me(Me.tableTable.DepartmentColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsIC_NumberNull() As Boolean
+            Return Me.IsNull(Me.tableTable.IC_NumberColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetIC_NumberNull()
+            Me(Me.tableTable.IC_NumberColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Function IsPasswordNull() As Boolean
-            Return Me.IsNull(Me.tableStaff.PasswordColumn)
+            Return Me.IsNull(Me.tableTable.PasswordColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub SetPasswordNull()
-            Me(Me.tableStaff.PasswordColumn) = Global.System.Convert.DBNull
+            Me(Me.tableTable.PasswordColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsPhone_NoNull() As Boolean
+            Return Me.IsNull(Me.tableTable.Phone_NoColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetPhone_NoNull()
+            Me(Me.tableTable.Phone_NoColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -690,16 +781,16 @@ Partial Public Class SatffDataSet
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Public Class StaffRowChangeEvent
+    Public Class TableRowChangeEvent
         Inherits Global.System.EventArgs
         
-        Private eventRow As StaffRow
+        Private eventRow As TableRow
         
         Private eventAction As Global.System.Data.DataRowAction
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub New(ByVal row As StaffRow, ByVal action As Global.System.Data.DataRowAction)
+        Public Sub New(ByVal row As TableRow, ByVal action As Global.System.Data.DataRowAction)
             MyBase.New
             Me.eventRow = row
             Me.eventAction = action
@@ -707,7 +798,7 @@ Partial Public Class SatffDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property Row() As StaffRow
+        Public ReadOnly Property Row() As TableRow
             Get
                 Return Me.eventRow
             End Get
@@ -723,7 +814,7 @@ Partial Public Class SatffDataSet
     End Class
 End Class
 
-Namespace SatffDataSetTableAdapters
+Namespace staffDataSetTableAdapters
     
     '''<summary>
     '''Represents the connection and commands used to retrieve and save data.
@@ -734,7 +825,7 @@ Namespace SatffDataSetTableAdapters
      Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
      Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class StaffTableAdapter
+    Partial Public Class TableTableAdapter
         Inherits Global.System.ComponentModel.Component
         
         Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
@@ -851,65 +942,83 @@ Namespace SatffDataSetTableAdapters
             Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
             Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
             tableMapping.SourceTable = "Table"
-            tableMapping.DataSetTable = "Staff"
+            tableMapping.DataSetTable = "Table"
             tableMapping.ColumnMappings.Add("Id", "Id")
-            tableMapping.ColumnMappings.Add("User Type", "User Type")
-            tableMapping.ColumnMappings.Add("User Name", "User Name")
+            tableMapping.ColumnMappings.Add("Staff Name", "Staff Name")
+            tableMapping.ColumnMappings.Add("Department", "Department")
+            tableMapping.ColumnMappings.Add("IC Number", "IC Number")
             tableMapping.ColumnMappings.Add("Password", "Password")
+            tableMapping.ColumnMappings.Add("Phone No", "Phone No")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Staff] WHERE (([Id] = @Original_Id) AND ((@IsNull_User_Type = "& _ 
-                "1 AND [User Type] IS NULL) OR ([User Type] = @Original_User_Type)) AND ((@IsNull"& _ 
-                "_User_Name = 1 AND [User Name] IS NULL) OR ([User Name] = @Original_User_Name)) "& _ 
-                "AND ((@IsNull_Password = 1 AND [Password] IS NULL) OR ([Password] = @Original_Pa"& _ 
-                "ssword)))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Table] WHERE (([Id] = @Original_Id) AND ((@IsNull_Staff_Name ="& _ 
+                " 1 AND [Staff Name] IS NULL) OR ([Staff Name] = @Original_Staff_Name)) AND ((@Is"& _ 
+                "Null_Department = 1 AND [Department] IS NULL) OR ([Department] = @Original_Depar"& _ 
+                "tment)) AND ((@IsNull_IC_Number = 1 AND [IC Number] IS NULL) OR ([IC Number] = @"& _ 
+                "Original_IC_Number)) AND ((@IsNull_Password = 1 AND [Password] IS NULL) OR ([Pas"& _ 
+                "sword] = @Original_Password)) AND ((@IsNull_Phone_No = 1 AND [Phone No] IS NULL)"& _ 
+                " OR ([Phone No] = @Original_Phone_No)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_User_Type", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "User Type", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_User_Type", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "User Type", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_User_Name", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "User Name", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_User_Name", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "User Name", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Staff_Name", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Staff Name", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Staff_Name", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Staff Name", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Department", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Department", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Department", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Department", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_IC_Number", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IC Number", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IC_Number", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IC Number", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Password", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Password", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Password", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Password", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Password", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Password", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Phone_No", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Phone No", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Phone_No", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Phone No", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Staff] ([Id], [User Type], [User Name], [Password]) VALUES (@I"& _ 
-                "d, @User_Type, @User_Name, @Password);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Id, [User Type], [User Name], Pas"& _ 
-                "sword FROM Staff WHERE (Id = @Id)"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Table] ([Staff Name], [Department], [IC Number], [Password], ["& _ 
+                "Phone No]) VALUES (@Staff_Name, @Department, @IC_Number, @Password, @Phone_No);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Id, [Staff Name], Department, [IC Number], Password, [Phone No] FROM [Ta"& _ 
+                "ble] WHERE (Id = SCOPE_IDENTITY())"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@User_Type", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "User Type", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@User_Name", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "User Name", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Password", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Password", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Staff_Name", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Staff Name", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Department", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Department", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IC_Number", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IC Number", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Password", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Password", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Phone_No", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Phone No", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Staff] SET [Id] = @Id, [User Type] = @User_Type, [User Name] = @Use"& _ 
-                "r_Name, [Password] = @Password WHERE (([Id] = @Original_Id) AND ((@IsNull_User_T"& _ 
-                "ype = 1 AND [User Type] IS NULL) OR ([User Type] = @Original_User_Type)) AND ((@"& _ 
-                "IsNull_User_Name = 1 AND [User Name] IS NULL) OR ([User Name] = @Original_User_N"& _ 
-                "ame)) AND ((@IsNull_Password = 1 AND [Password] IS NULL) OR ([Password] = @Origi"& _ 
-                "nal_Password)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Id, [User Type], [User Name], Password FROM Staff WHERE"& _ 
-                " (Id = @Id)"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Table] SET [Staff Name] = @Staff_Name, [Department] = @Department, "& _ 
+                "[IC Number] = @IC_Number, [Password] = @Password, [Phone No] = @Phone_No WHERE ("& _ 
+                "([Id] = @Original_Id) AND ((@IsNull_Staff_Name = 1 AND [Staff Name] IS NULL) OR "& _ 
+                "([Staff Name] = @Original_Staff_Name)) AND ((@IsNull_Department = 1 AND [Departm"& _ 
+                "ent] IS NULL) OR ([Department] = @Original_Department)) AND ((@IsNull_IC_Number "& _ 
+                "= 1 AND [IC Number] IS NULL) OR ([IC Number] = @Original_IC_Number)) AND ((@IsNu"& _ 
+                "ll_Password = 1 AND [Password] IS NULL) OR ([Password] = @Original_Password)) AN"& _ 
+                "D ((@IsNull_Phone_No = 1 AND [Phone No] IS NULL) OR ([Phone No] = @Original_Phon"& _ 
+                "e_No)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Id, [Staff Name], Department, [IC Number], Password, [Phone No]"& _ 
+                " FROM [Table] WHERE (Id = @Id)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@User_Type", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "User Type", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@User_Name", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "User Name", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Password", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Password", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Staff_Name", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Staff Name", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Department", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Department", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IC_Number", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IC Number", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Password", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Password", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Phone_No", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Phone No", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_User_Type", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "User Type", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_User_Type", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "User Type", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_User_Name", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "User Name", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_User_Name", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "User Name", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Staff_Name", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Staff Name", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Staff_Name", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Staff Name", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Department", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Department", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Department", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Department", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_IC_Number", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IC Number", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IC_Number", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IC Number", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Password", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Password", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Password", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Password", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Password", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Password", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Phone_No", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Phone No", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Phone_No", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Phone No", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Id", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "Id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.FoodOrderingSystem.My.MySettings.Default.SatffConnectionString
+            Me._connection.ConnectionString = Global.FoodOrderingSystem.My.MySettings.Default.staffConnectionString
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -918,7 +1027,8 @@ Namespace SatffDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT Id, [User Type], [User Name], Password FROM dbo.Staff"
+            Me._commandCollection(0).CommandText = "SELECT Id, [Staff Name], Department, [IC Number], Password, [Phone No] FROM dbo.["& _ 
+                "Table]"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -926,7 +1036,7 @@ Namespace SatffDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As SatffDataSet.StaffDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As staffDataSet.TableDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -939,9 +1049,9 @@ Namespace SatffDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As SatffDataSet.StaffDataTable
+        Public Overloads Overridable Function GetData() As staffDataSet.TableDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As SatffDataSet.StaffDataTable = New SatffDataSet.StaffDataTable()
+            Dim dataTable As staffDataSet.TableDataTable = New staffDataSet.TableDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -949,15 +1059,15 @@ Namespace SatffDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As SatffDataSet.StaffDataTable) As Integer
+        Public Overloads Overridable Function Update(ByVal dataTable As staffDataSet.TableDataTable) As Integer
             Return Me.Adapter.Update(dataTable)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataSet As SatffDataSet) As Integer
-            Return Me.Adapter.Update(dataSet, "Staff")
+        Public Overloads Overridable Function Update(ByVal dataSet As staffDataSet) As Integer
+            Return Me.Adapter.Update(dataSet, "Table")
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -978,28 +1088,42 @@ Namespace SatffDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_Id As Integer, ByVal Original_User_Type As Global.System.Nullable(Of Boolean), ByVal Original_User_Name As String, ByVal Original_Password As String) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_Id As Integer, ByVal Original_Staff_Name As String, ByVal Original_Department As String, ByVal Original_IC_Number As Global.System.Nullable(Of Integer), ByVal Original_Password As String, ByVal Original_Phone_No As Global.System.Nullable(Of Integer)) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_Id,Integer)
-            If (Original_User_Type.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_User_Type.Value,Boolean)
-            Else
+            If (Original_Staff_Name Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_Staff_Name,String)
             End If
-            If (Original_User_Name Is Nothing) Then
+            If (Original_Department Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(3).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_User_Name,String)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_Department,String)
             End If
-            If (Original_Password Is Nothing) Then
+            If (Original_IC_Number.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_IC_Number.Value,Integer)
+            Else
                 Me.Adapter.DeleteCommand.Parameters(5).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(6).Value = Global.System.DBNull.Value
+            End If
+            If (Original_Password Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_Password,String)
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_Password,String)
+            End If
+            If (Original_Phone_No.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_Phone_No.Value,Integer)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(10).Value = Global.System.DBNull.Value
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -1020,22 +1144,31 @@ Namespace SatffDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal Id As Integer, ByVal User_Type As Global.System.Nullable(Of Boolean), ByVal User_Name As String, ByVal Password As String) As Integer
-            Me.Adapter.InsertCommand.Parameters(0).Value = CType(Id,Integer)
-            If (User_Type.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(1).Value = CType(User_Type.Value,Boolean)
+        Public Overloads Overridable Function Insert(ByVal Staff_Name As String, ByVal Department As String, ByVal IC_Number As Global.System.Nullable(Of Integer), ByVal Password As String, ByVal Phone_No As Global.System.Nullable(Of Integer)) As Integer
+            If (Staff_Name Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
+                Me.Adapter.InsertCommand.Parameters(0).Value = CType(Staff_Name,String)
             End If
-            If (User_Name Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
+            If (Department Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(2).Value = CType(User_Name,String)
+                Me.Adapter.InsertCommand.Parameters(1).Value = CType(Department,String)
+            End If
+            If (IC_Number.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(2).Value = CType(IC_Number.Value,Integer)
+            Else
+                Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
             End If
             If (Password Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.InsertCommand.Parameters(3).Value = CType(Password,String)
+            End If
+            If (Phone_No.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(4).Value = CType(Phone_No.Value,Integer)
+            Else
+                Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -1056,45 +1189,69 @@ Namespace SatffDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal Id As Integer, ByVal User_Type As Global.System.Nullable(Of Boolean), ByVal User_Name As String, ByVal Password As String, ByVal Original_Id As Integer, ByVal Original_User_Type As Global.System.Nullable(Of Boolean), ByVal Original_User_Name As String, ByVal Original_Password As String) As Integer
-            Me.Adapter.UpdateCommand.Parameters(0).Value = CType(Id,Integer)
-            If (User_Type.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(User_Type.Value,Boolean)
+        Public Overloads Overridable Function Update(ByVal Staff_Name As String, ByVal Department As String, ByVal IC_Number As Global.System.Nullable(Of Integer), ByVal Password As String, ByVal Phone_No As Global.System.Nullable(Of Integer), ByVal Original_Id As Integer, ByVal Original_Staff_Name As String, ByVal Original_Department As String, ByVal Original_IC_Number As Global.System.Nullable(Of Integer), ByVal Original_Password As String, ByVal Original_Phone_No As Global.System.Nullable(Of Integer), ByVal Id As Integer) As Integer
+            If (Staff_Name Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(Staff_Name,String)
             End If
-            If (User_Name Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
+            If (Department Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(User_Name,String)
+                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(Department,String)
+            End If
+            If (IC_Number.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(IC_Number.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
             End If
             If (Password Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Password,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Original_Id,Integer)
-            If (Original_User_Type.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_User_Type.Value,Boolean)
+            If (Phone_No.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Phone_No.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
             End If
-            If (Original_User_Name Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
+            Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Original_Id,Integer)
+            If (Original_Staff_Name Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_User_Name,String)
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_Staff_Name,String)
+            End If
+            If (Original_Department Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_Department,String)
+            End If
+            If (Original_IC_Number.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_IC_Number.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
             End If
             If (Original_Password Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(13).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_Password,String)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_Password,String)
             End If
+            If (Original_Phone_No.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_Phone_No.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = Global.System.DBNull.Value
+            End If
+            Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Id,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -1114,8 +1271,8 @@ Namespace SatffDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal User_Type As Global.System.Nullable(Of Boolean), ByVal User_Name As String, ByVal Password As String, ByVal Original_Id As Integer, ByVal Original_User_Type As Global.System.Nullable(Of Boolean), ByVal Original_User_Name As String, ByVal Original_Password As String) As Integer
-            Return Me.Update(Original_Id, User_Type, User_Name, Password, Original_Id, Original_User_Type, Original_User_Name, Original_Password)
+        Public Overloads Overridable Function Update(ByVal Staff_Name As String, ByVal Department As String, ByVal IC_Number As Global.System.Nullable(Of Integer), ByVal Password As String, ByVal Phone_No As Global.System.Nullable(Of Integer), ByVal Original_Id As Integer, ByVal Original_Staff_Name As String, ByVal Original_Department As String, ByVal Original_IC_Number As Global.System.Nullable(Of Integer), ByVal Original_Password As String, ByVal Original_Phone_No As Global.System.Nullable(Of Integer)) As Integer
+            Return Me.Update(Staff_Name, Department, IC_Number, Password, Phone_No, Original_Id, Original_Staff_Name, Original_Department, Original_IC_Number, Original_Password, Original_Phone_No, Original_Id)
         End Function
     End Class
     
@@ -1132,7 +1289,7 @@ Namespace SatffDataSetTableAdapters
         
         Private _updateOrder As UpdateOrderOption
         
-        Private _staffTableAdapter As StaffTableAdapter
+        Private _tableTableAdapter As TableTableAdapter
         
         Private _backupDataSetBeforeUpdate As Boolean
         
@@ -1154,12 +1311,12 @@ Namespace SatffDataSetTableAdapters
          Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
             "a", "System.Drawing.Design.UITypeEditor")>  _
-        Public Property StaffTableAdapter() As StaffTableAdapter
+        Public Property TableTableAdapter() As TableTableAdapter
             Get
-                Return Me._staffTableAdapter
+                Return Me._tableTableAdapter
             End Get
             Set
-                Me._staffTableAdapter = value
+                Me._tableTableAdapter = value
             End Set
         End Property
         
@@ -1182,9 +1339,9 @@ Namespace SatffDataSetTableAdapters
                 If (Not (Me._connection) Is Nothing) Then
                     Return Me._connection
                 End If
-                If ((Not (Me._staffTableAdapter) Is Nothing)  _
-                            AndAlso (Not (Me._staffTableAdapter.Connection) Is Nothing)) Then
-                    Return Me._staffTableAdapter.Connection
+                If ((Not (Me._tableTableAdapter) Is Nothing)  _
+                            AndAlso (Not (Me._tableTableAdapter.Connection) Is Nothing)) Then
+                    Return Me._tableTableAdapter.Connection
                 End If
                 Return Nothing
             End Get
@@ -1199,7 +1356,7 @@ Namespace SatffDataSetTableAdapters
         Public ReadOnly Property TableAdapterInstanceCount() As Integer
             Get
                 Dim count As Integer = 0
-                If (Not (Me._staffTableAdapter) Is Nothing) Then
+                If (Not (Me._tableTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
                 Return count
@@ -1211,14 +1368,14 @@ Namespace SatffDataSetTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Function UpdateUpdatedRows(ByVal dataSet As SatffDataSet, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateUpdatedRows(ByVal dataSet As staffDataSet, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._staffTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Staff.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+            If (Not (Me._tableTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Table.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._staffTableAdapter.Update(updatedRows))
+                    result = (result + Me._tableTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -1230,13 +1387,13 @@ Namespace SatffDataSetTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Function UpdateInsertedRows(ByVal dataSet As SatffDataSet, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateInsertedRows(ByVal dataSet As staffDataSet, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._staffTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.Staff.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+            If (Not (Me._tableTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.Table.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._staffTableAdapter.Update(addedRows))
+                    result = (result + Me._tableTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -1248,13 +1405,13 @@ Namespace SatffDataSetTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Function UpdateDeletedRows(ByVal dataSet As SatffDataSet, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateDeletedRows(ByVal dataSet As staffDataSet, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._staffTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Staff.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+            If (Not (Me._tableTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Table.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._staffTableAdapter.Update(deletedRows))
+                    result = (result + Me._tableTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -1292,15 +1449,15 @@ Namespace SatffDataSetTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overridable Function UpdateAll(ByVal dataSet As SatffDataSet) As Integer
+        Public Overridable Function UpdateAll(ByVal dataSet As staffDataSet) As Integer
             If (dataSet Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("dataSet")
             End If
             If (dataSet.HasChanges = false) Then
                 Return 0
             End If
-            If ((Not (Me._staffTableAdapter) Is Nothing)  _
-                        AndAlso (Me.MatchTableAdapterConnection(Me._staffTableAdapter.Connection) = false)) Then
+            If ((Not (Me._tableTableAdapter) Is Nothing)  _
+                        AndAlso (Me.MatchTableAdapterConnection(Me._tableTableAdapter.Connection) = false)) Then
                 Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
                         "tring.")
             End If
@@ -1336,13 +1493,13 @@ Namespace SatffDataSetTableAdapters
             Try 
                 '---- Prepare for update -----------
                 '
-                If (Not (Me._staffTableAdapter) Is Nothing) Then
-                    revertConnections.Add(Me._staffTableAdapter, Me._staffTableAdapter.Connection)
-                    Me._staffTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
-                    Me._staffTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
-                    If Me._staffTableAdapter.Adapter.AcceptChangesDuringUpdate Then
-                        Me._staffTableAdapter.Adapter.AcceptChangesDuringUpdate = false
-                        adaptersWithAcceptChangesDuringUpdate.Add(Me._staffTableAdapter.Adapter)
+                If (Not (Me._tableTableAdapter) Is Nothing) Then
+                    revertConnections.Add(Me._tableTableAdapter, Me._tableTableAdapter.Connection)
+                    Me._tableTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
+                    Me._tableTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
+                    If Me._tableTableAdapter.Adapter.AcceptChangesDuringUpdate Then
+                        Me._tableTableAdapter.Adapter.AcceptChangesDuringUpdate = false
+                        adaptersWithAcceptChangesDuringUpdate.Add(Me._tableTableAdapter.Adapter)
                     End If
                 End If
                 '
@@ -1405,9 +1562,9 @@ Namespace SatffDataSetTableAdapters
                 If workConnOpened Then
                     workConnection.Close
                 End If
-                If (Not (Me._staffTableAdapter) Is Nothing) Then
-                    Me._staffTableAdapter.Connection = CType(revertConnections(Me._staffTableAdapter),Global.System.Data.SqlClient.SqlConnection)
-                    Me._staffTableAdapter.Transaction = Nothing
+                If (Not (Me._tableTableAdapter) Is Nothing) Then
+                    Me._tableTableAdapter.Connection = CType(revertConnections(Me._tableTableAdapter),Global.System.Data.SqlClient.SqlConnection)
+                    Me._tableTableAdapter.Transaction = Nothing
                 End If
                 If (0 < adaptersWithAcceptChangesDuringUpdate.Count) Then
                     Dim adapters((adaptersWithAcceptChangesDuringUpdate.Count) - 1) As Global.System.Data.Common.DataAdapter
