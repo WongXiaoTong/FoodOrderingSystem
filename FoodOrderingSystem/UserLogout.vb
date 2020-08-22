@@ -1,4 +1,4 @@
-﻿Public Class Form4
+﻿Public Class UserLogout
     Private lblDateTime As Object
     Public Property Timer1 As Object
 

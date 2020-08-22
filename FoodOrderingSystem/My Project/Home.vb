@@ -5,7 +5,7 @@
 
     Private Sub btnAdmin_Click(sender As Object, e As EventArgs) Handles btnAdmin.Click
         Slider.Top = btnAdmin.Top
-        Form2.Show()
+        Staff.Show()
     End Sub
 
     Private Sub btnMenu_Click(sender As Object, e As EventArgs) Handles btnMenu.Click
@@ -23,7 +23,7 @@
     End Sub
 
     Private Sub DailyMenuToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DailyMenuToolStripMenuItem.Click
-        Form1.Show()
+        menuPage.Show()
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
@@ -33,7 +33,7 @@
     End Sub
 
     Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
-        Form4.Show()
+        UserLogout.Show()
         Me.Hide()
     End Sub
 

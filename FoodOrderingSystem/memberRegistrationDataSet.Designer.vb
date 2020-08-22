@@ -484,6 +484,7 @@ Partial Public Class memberRegistrationDataSet
             MyBase.Columns.Add(Me.columnEmail)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnId}, true))
             Me.columnId.AutoIncrement = true
+            Me.columnId.AutoIncrementSeed = 10001
             Me.columnId.AllowDBNull = false
             Me.columnId.ReadOnly = true
             Me.columnId.Unique = true

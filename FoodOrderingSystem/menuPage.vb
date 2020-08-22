@@ -1,4 +1,4 @@
-﻿Public Class Form1
+﻿Public Class menuPage
     Dim chocoLava As Decimal
     Dim creamCheese As Decimal
     Dim pudding As Decimal

@@ -25,7 +25,7 @@
     End Sub
 
     Private Sub btn_Calculate_Click(sender As Object, e As EventArgs) Handles btn_Calculate.Click
-        Form1.Show()
+        menuPage.Show()
         'Order_Date_TextBox = Today
         'Order_TimeTextBox = TimeOfDay
         Dim decTotalQuantity, decDiscount, decAfterDiscount, decOrderSubTotal, decServicesTax, decTotalPrice, decCash, decChange As Decimal
@@ -40,8 +40,8 @@
         decCash = Decimal.Parse(Cash_TextBox.Text)
         decChange = Decimal.Parse(Change_Label.Text)
 
-        decTotalQuantity = Form1.txtLava.Text + Form1.txtCheese.Text + Form1.txtStraw.Text + Form1.txtMango.Text + Form1.txtFrench.Text + Form1.txtOnion.Text + Form1.txtPineapple.Text + Form1.txtFloss.Text + Form1.txtTart1.Text + Form1.txtTart2.Text + Form1.txtTart3.Text + Form1.txtTart4.Text
-        decOrderSubTotal = Form1.SubTotalLava.Text + Form1.SubTotalCheese.Text + Form1.SubTotalPudding.Text + Form1.SubTotalMango.Text + Form1.SubTotalFrench.Text + Form1.SubTotalOnion.Text + Form1.SubTotalButter.Text + Form1.SubTotalFloss.Text + Form1.SubTotalStraw.Text + Form1.SubTotalMini.Text + Form1.SubTotalEgg.Text + Form1.SubTotalBlue.Text
+        decTotalQuantity = menuPage.txtLava.Text + menuPage.txtCheese.Text + menuPage.txtStraw.Text + menuPage.txtMango.Text + menuPage.txtFrench.Text + menuPage.txtOnion.Text + menuPage.txtPineapple.Text + menuPage.txtFloss.Text + menuPage.txtTart1.Text + menuPage.txtTart2.Text + menuPage.txtTart3.Text + menuPage.txtTart4.Text
+        decOrderSubTotal = menuPage.SubTotalLava.Text + menuPage.SubTotalCheese.Text + menuPage.SubTotalPudding.Text + menuPage.SubTotalMango.Text + menuPage.SubTotalFrench.Text + menuPage.SubTotalOnion.Text + menuPage.SubTotalButter.Text + menuPage.SubTotalFloss.Text + menuPage.SubTotalStraw.Text + menuPage.SubTotalMini.Text + menuPage.SubTotalEgg.Text + menuPage.SubTotalBlue.Text
         If decOrderSubTotal >= 20 And decOrderSubTotal <= 49 Then
             decDiscount = decOrderSubTotal * 0.005
         ElseIf decOrderSubTotal >= 50 And decOrderSubTotal <= 99 Then

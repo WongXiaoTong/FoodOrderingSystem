@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Member
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,33 +20,42 @@ Partial Class Member
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Member))
         Dim IdLabel As System.Windows.Forms.Label
         Dim Label2 As System.Windows.Forms.Label
         Dim Label3 As System.Windows.Forms.Label
         Dim Label4 As System.Windows.Forms.Label
         Dim Label6 As System.Windows.Forms.Label
-        Dim Label5 As System.Windows.Forms.Label
         Dim Label7 As System.Windows.Forms.Label
+        Dim Label5 As System.Windows.Forms.Label
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Member))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TableBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
+        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
+        Me.TableBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.MemberRegistrationDataSet = New FoodOrderingSystem.memberRegistrationDataSet()
+        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
+        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMovePreviousItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator = New System.Windows.Forms.ToolStripSeparator()
         Me.BindingNavigatorPositionItem = New System.Windows.Forms.ToolStripTextBox()
-        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
         Me.BindingNavigatorSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
         Me.TableBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
         Me.TableDataGridView = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.IdTextBox = New System.Windows.Forms.TextBox()
         Me.UsernameTextBox = New System.Windows.Forms.TextBox()
         Me.AddressTextBox = New System.Windows.Forms.TextBox()
@@ -59,33 +68,106 @@ Partial Class Member
         Me.btnDel = New System.Windows.Forms.Button()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TableBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.MemberRegistrationDataSet = New FoodOrderingSystem.memberRegistrationDataSet()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.GenderComboBox = New System.Windows.Forms.ComboBox()
         Me.TableTableAdapter = New FoodOrderingSystem.memberRegistrationDataSetTableAdapters.TableTableAdapter()
         Me.TableAdapterManager = New FoodOrderingSystem.memberRegistrationDataSetTableAdapters.TableAdapterManager()
-        Me.GenderComboBox = New System.Windows.Forms.ComboBox()
+        Me.btnFirst = New System.Windows.Forms.Button()
+        Me.btnLast = New System.Windows.Forms.Button()
+        Me.btnPrevious = New System.Windows.Forms.Button()
+        Me.btnNext = New System.Windows.Forms.Button()
+        Me.btnSearch = New System.Windows.Forms.Button()
         IdLabel = New System.Windows.Forms.Label()
         Label2 = New System.Windows.Forms.Label()
         Label3 = New System.Windows.Forms.Label()
         Label4 = New System.Windows.Forms.Label()
         Label6 = New System.Windows.Forms.Label()
-        Label5 = New System.Windows.Forms.Label()
         Label7 = New System.Windows.Forms.Label()
+        Label5 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.TableBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableBindingNavigator.SuspendLayout()
-        CType(Me.TableDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.ContextMenuStrip1.SuspendLayout()
         CType(Me.TableBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MemberRegistrationDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TableDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ContextMenuStrip1.SuspendLayout()
         Me.SuspendLayout()
+        '
+        'IdLabel
+        '
+        IdLabel.AutoSize = True
+        IdLabel.BackColor = System.Drawing.Color.Transparent
+        IdLabel.Font = New System.Drawing.Font("Palatino Linotype", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        IdLabel.Location = New System.Drawing.Point(84, 89)
+        IdLabel.Name = "IdLabel"
+        IdLabel.Size = New System.Drawing.Size(31, 22)
+        IdLabel.TabIndex = 3
+        IdLabel.Text = "ID:"
+        '
+        'Label2
+        '
+        Label2.AutoSize = True
+        Label2.BackColor = System.Drawing.Color.Transparent
+        Label2.Font = New System.Drawing.Font("Palatino Linotype", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Label2.Location = New System.Drawing.Point(31, 121)
+        Label2.Name = "Label2"
+        Label2.Size = New System.Drawing.Size(84, 22)
+        Label2.TabIndex = 17
+        Label2.Text = "Username:"
+        '
+        'Label3
+        '
+        Label3.AutoSize = True
+        Label3.BackColor = System.Drawing.Color.Transparent
+        Label3.Font = New System.Drawing.Font("Palatino Linotype", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Label3.Location = New System.Drawing.Point(47, 158)
+        Label3.Name = "Label3"
+        Label3.Size = New System.Drawing.Size(68, 22)
+        Label3.TabIndex = 18
+        Label3.Text = "Address:"
+        '
+        'Label4
+        '
+        Label4.AutoSize = True
+        Label4.BackColor = System.Drawing.Color.Transparent
+        Label4.Font = New System.Drawing.Font("Palatino Linotype", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Label4.Location = New System.Drawing.Point(72, 194)
+        Label4.Name = "Label4"
+        Label4.Size = New System.Drawing.Size(43, 22)
+        Label4.TabIndex = 19
+        Label4.Text = "City:"
+        '
+        'Label6
+        '
+        Label6.AutoSize = True
+        Label6.BackColor = System.Drawing.Color.Transparent
+        Label6.Font = New System.Drawing.Font("Palatino Linotype", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Label6.Location = New System.Drawing.Point(33, 229)
+        Label6.Name = "Label6"
+        Label6.Size = New System.Drawing.Size(82, 22)
+        Label6.TabIndex = 21
+        Label6.Text = "Phone No:"
+        '
+        'Label7
+        '
+        Label7.AutoSize = True
+        Label7.BackColor = System.Drawing.Color.Transparent
+        Label7.Font = New System.Drawing.Font("Palatino Linotype", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Label7.Location = New System.Drawing.Point(279, 121)
+        Label7.Name = "Label7"
+        Label7.Size = New System.Drawing.Size(64, 22)
+        Label7.TabIndex = 24
+        Label7.Text = "Gender:"
+        '
+        'Label5
+        '
+        Label5.AutoSize = True
+        Label5.BackColor = System.Drawing.Color.Transparent
+        Label5.Font = New System.Drawing.Font("Palatino Linotype", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Label5.Location = New System.Drawing.Point(289, 232)
+        Label5.Name = "Label5"
+        Label5.Size = New System.Drawing.Size(54, 22)
+        Label5.TabIndex = 22
+        Label5.Text = "Email:"
         '
         'Panel1
         '
@@ -129,6 +211,41 @@ Partial Class Member
         Me.TableBindingNavigator.TabIndex = 1
         Me.TableBindingNavigator.Text = "BindingNavigator1"
         '
+        'BindingNavigatorAddNewItem
+        '
+        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
+        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(23, 22)
+        Me.BindingNavigatorAddNewItem.Text = "Add new"
+        '
+        'TableBindingSource
+        '
+        Me.TableBindingSource.DataMember = "Table"
+        Me.TableBindingSource.DataSource = Me.MemberRegistrationDataSet
+        '
+        'MemberRegistrationDataSet
+        '
+        Me.MemberRegistrationDataSet.DataSetName = "memberRegistrationDataSet"
+        Me.MemberRegistrationDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'BindingNavigatorCountItem
+        '
+        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
+        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(35, 22)
+        Me.BindingNavigatorCountItem.Text = "of {0}"
+        Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
+        '
+        'BindingNavigatorDeleteItem
+        '
+        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
+        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(23, 22)
+        Me.BindingNavigatorDeleteItem.Text = "Delete"
+        '
         'BindingNavigatorMoveFirstItem
         '
         Me.BindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
@@ -161,16 +278,9 @@ Partial Class Member
         Me.BindingNavigatorPositionItem.Text = "0"
         Me.BindingNavigatorPositionItem.ToolTipText = "Current position"
         '
-        'BindingNavigatorCountItem
-        '
-        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(35, 22)
-        Me.BindingNavigatorCountItem.Text = "of {0}"
-        Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
-        '
         'BindingNavigatorSeparator1
         '
-        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator"
+        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator1"
         Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 25)
         '
         'BindingNavigatorMoveNextItem
@@ -193,26 +303,8 @@ Partial Class Member
         '
         'BindingNavigatorSeparator2
         '
-        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator"
+        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
         Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 25)
-        '
-        'BindingNavigatorAddNewItem
-        '
-        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
-        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorAddNewItem.Text = "Add new"
-        '
-        'BindingNavigatorDeleteItem
-        '
-        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
-        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorDeleteItem.Text = "Delete"
         '
         'TableBindingNavigatorSaveItem
         '
@@ -229,21 +321,53 @@ Partial Class Member
         Me.TableDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.TableDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7})
         Me.TableDataGridView.DataSource = Me.TableBindingSource
-        Me.TableDataGridView.Location = New System.Drawing.Point(16, 337)
+        Me.TableDataGridView.Location = New System.Drawing.Point(37, 385)
         Me.TableDataGridView.Name = "TableDataGridView"
-        Me.TableDataGridView.Size = New System.Drawing.Size(497, 220)
+        Me.TableDataGridView.Size = New System.Drawing.Size(497, 229)
         Me.TableDataGridView.TabIndex = 2
         '
-        'IdLabel
+        'DataGridViewTextBoxColumn1
         '
-        IdLabel.AutoSize = True
-        IdLabel.BackColor = System.Drawing.Color.Transparent
-        IdLabel.Font = New System.Drawing.Font("Palatino Linotype", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        IdLabel.Location = New System.Drawing.Point(84, 89)
-        IdLabel.Name = "IdLabel"
-        IdLabel.Size = New System.Drawing.Size(31, 22)
-        IdLabel.TabIndex = 3
-        IdLabel.Text = "ID:"
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "Id"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "Id"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "Username"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Username"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.DataPropertyName = "Address"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "Address"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        Me.DataGridViewTextBoxColumn4.DataPropertyName = "City"
+        Me.DataGridViewTextBoxColumn4.HeaderText = "City"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        '
+        'DataGridViewTextBoxColumn5
+        '
+        Me.DataGridViewTextBoxColumn5.DataPropertyName = "Gender"
+        Me.DataGridViewTextBoxColumn5.HeaderText = "Gender"
+        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        '
+        'DataGridViewTextBoxColumn6
+        '
+        Me.DataGridViewTextBoxColumn6.DataPropertyName = "Phone No"
+        Me.DataGridViewTextBoxColumn6.HeaderText = "Phone No"
+        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
+        '
+        'DataGridViewTextBoxColumn7
+        '
+        Me.DataGridViewTextBoxColumn7.DataPropertyName = "Email"
+        Me.DataGridViewTextBoxColumn7.HeaderText = "Email"
+        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
         '
         'IdTextBox
         '
@@ -294,72 +418,6 @@ Partial Class Member
         Me.EmailTextBox.Name = "EmailTextBox"
         Me.EmailTextBox.Size = New System.Drawing.Size(133, 20)
         Me.EmailTextBox.TabIndex = 16
-        '
-        'Label2
-        '
-        Label2.AutoSize = True
-        Label2.BackColor = System.Drawing.Color.Transparent
-        Label2.Font = New System.Drawing.Font("Palatino Linotype", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label2.Location = New System.Drawing.Point(31, 121)
-        Label2.Name = "Label2"
-        Label2.Size = New System.Drawing.Size(84, 22)
-        Label2.TabIndex = 17
-        Label2.Text = "Username:"
-        '
-        'Label3
-        '
-        Label3.AutoSize = True
-        Label3.BackColor = System.Drawing.Color.Transparent
-        Label3.Font = New System.Drawing.Font("Palatino Linotype", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label3.Location = New System.Drawing.Point(47, 158)
-        Label3.Name = "Label3"
-        Label3.Size = New System.Drawing.Size(68, 22)
-        Label3.TabIndex = 18
-        Label3.Text = "Address:"
-        '
-        'Label4
-        '
-        Label4.AutoSize = True
-        Label4.BackColor = System.Drawing.Color.Transparent
-        Label4.Font = New System.Drawing.Font("Palatino Linotype", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label4.Location = New System.Drawing.Point(72, 194)
-        Label4.Name = "Label4"
-        Label4.Size = New System.Drawing.Size(43, 22)
-        Label4.TabIndex = 19
-        Label4.Text = "City:"
-        '
-        'Label6
-        '
-        Label6.AutoSize = True
-        Label6.BackColor = System.Drawing.Color.Transparent
-        Label6.Font = New System.Drawing.Font("Palatino Linotype", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label6.Location = New System.Drawing.Point(33, 229)
-        Label6.Name = "Label6"
-        Label6.Size = New System.Drawing.Size(82, 22)
-        Label6.TabIndex = 21
-        Label6.Text = "Phone No:"
-        '
-        'Label5
-        '
-        Label5.AutoSize = True
-        Label5.BackColor = System.Drawing.Color.Transparent
-        Label5.Font = New System.Drawing.Font("Palatino Linotype", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label5.Location = New System.Drawing.Point(289, 232)
-        Label5.Name = "Label5"
-        Label5.Size = New System.Drawing.Size(54, 22)
-        Label5.TabIndex = 22
-        Label5.Text = "Email:"
-        '
-        'Label7
-        '
-        Label7.AutoSize = True
-        Label7.BackColor = System.Drawing.Color.Transparent
-        Label7.Font = New System.Drawing.Font("Palatino Linotype", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label7.Location = New System.Drawing.Point(279, 121)
-        Label7.Name = "Label7"
-        Label7.Size = New System.Drawing.Size(64, 22)
-        Label7.TabIndex = 24
-        Label7.Text = "Gender:"
         '
         'btnAdd
         '
@@ -417,58 +475,15 @@ Partial Class Member
         Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(93, 22)
         Me.ExitToolStripMenuItem.Text = "&Exit"
         '
-        'TableBindingSource
+        'GenderComboBox
         '
-        Me.TableBindingSource.DataMember = "Table"
-        Me.TableBindingSource.DataSource = Me.MemberRegistrationDataSet
-        '
-        'MemberRegistrationDataSet
-        '
-        Me.MemberRegistrationDataSet.DataSetName = "memberRegistrationDataSet"
-        Me.MemberRegistrationDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "Id"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "Id"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.DataPropertyName = "Username"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "Username"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.DataPropertyName = "Address"
-        Me.DataGridViewTextBoxColumn3.HeaderText = "Address"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        '
-        'DataGridViewTextBoxColumn4
-        '
-        Me.DataGridViewTextBoxColumn4.DataPropertyName = "City"
-        Me.DataGridViewTextBoxColumn4.HeaderText = "City"
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        '
-        'DataGridViewTextBoxColumn5
-        '
-        Me.DataGridViewTextBoxColumn5.DataPropertyName = "Gender"
-        Me.DataGridViewTextBoxColumn5.HeaderText = "Gender"
-        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
-        '
-        'DataGridViewTextBoxColumn6
-        '
-        Me.DataGridViewTextBoxColumn6.DataPropertyName = "Phone No"
-        Me.DataGridViewTextBoxColumn6.HeaderText = "Phone No"
-        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
-        '
-        'DataGridViewTextBoxColumn7
-        '
-        Me.DataGridViewTextBoxColumn7.DataPropertyName = "Email"
-        Me.DataGridViewTextBoxColumn7.HeaderText = "Email"
-        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
+        Me.GenderComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.TableBindingSource, "Gender", True))
+        Me.GenderComboBox.FormattingEnabled = True
+        Me.GenderComboBox.Items.AddRange(New Object() {"Male", "Female"})
+        Me.GenderComboBox.Location = New System.Drawing.Point(349, 120)
+        Me.GenderComboBox.Name = "GenderComboBox"
+        Me.GenderComboBox.Size = New System.Drawing.Size(133, 21)
+        Me.GenderComboBox.TabIndex = 30
         '
         'TableTableAdapter
         '
@@ -480,15 +495,60 @@ Partial Class Member
         Me.TableAdapterManager.TableTableAdapter = Me.TableTableAdapter
         Me.TableAdapterManager.UpdateOrder = FoodOrderingSystem.memberRegistrationDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
-        'GenderComboBox
+        'btnFirst
         '
-        Me.GenderComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.TableBindingSource, "Gender", True))
-        Me.GenderComboBox.FormattingEnabled = True
-        Me.GenderComboBox.Items.AddRange(New Object() {"Male", "Female"})
-        Me.GenderComboBox.Location = New System.Drawing.Point(349, 120)
-        Me.GenderComboBox.Name = "GenderComboBox"
-        Me.GenderComboBox.Size = New System.Drawing.Size(133, 21)
-        Me.GenderComboBox.TabIndex = 30
+        Me.btnFirst.BackgroundImage = Global.FoodOrderingSystem.My.Resources.Resources.WoodBackground54342
+        Me.btnFirst.Font = New System.Drawing.Font("Palatino Linotype", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnFirst.Location = New System.Drawing.Point(67, 327)
+        Me.btnFirst.Name = "btnFirst"
+        Me.btnFirst.Size = New System.Drawing.Size(75, 35)
+        Me.btnFirst.TabIndex = 31
+        Me.btnFirst.Text = "First"
+        Me.btnFirst.UseVisualStyleBackColor = True
+        '
+        'btnLast
+        '
+        Me.btnLast.BackgroundImage = Global.FoodOrderingSystem.My.Resources.Resources.WoodBackground54342
+        Me.btnLast.Font = New System.Drawing.Font("Palatino Linotype", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnLast.Location = New System.Drawing.Point(173, 327)
+        Me.btnLast.Name = "btnLast"
+        Me.btnLast.Size = New System.Drawing.Size(75, 35)
+        Me.btnLast.TabIndex = 32
+        Me.btnLast.Text = "Last"
+        Me.btnLast.UseVisualStyleBackColor = True
+        '
+        'btnPrevious
+        '
+        Me.btnPrevious.BackgroundImage = Global.FoodOrderingSystem.My.Resources.Resources.WoodBackground54342
+        Me.btnPrevious.Font = New System.Drawing.Font("Palatino Linotype", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnPrevious.Location = New System.Drawing.Point(268, 327)
+        Me.btnPrevious.Name = "btnPrevious"
+        Me.btnPrevious.Size = New System.Drawing.Size(75, 35)
+        Me.btnPrevious.TabIndex = 33
+        Me.btnPrevious.Text = "Previous"
+        Me.btnPrevious.UseVisualStyleBackColor = True
+        '
+        'btnNext
+        '
+        Me.btnNext.BackgroundImage = Global.FoodOrderingSystem.My.Resources.Resources.WoodBackground54342
+        Me.btnNext.Font = New System.Drawing.Font("Palatino Linotype", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnNext.Location = New System.Drawing.Point(367, 327)
+        Me.btnNext.Name = "btnNext"
+        Me.btnNext.Size = New System.Drawing.Size(75, 35)
+        Me.btnNext.TabIndex = 34
+        Me.btnNext.Text = "Next"
+        Me.btnNext.UseVisualStyleBackColor = True
+        '
+        'btnSearch
+        '
+        Me.btnSearch.BackgroundImage = Global.FoodOrderingSystem.My.Resources.Resources.WhatsApp_Image_2020_07_18_at_6_44_26_PM
+        Me.btnSearch.Font = New System.Drawing.Font("Palatino Linotype", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSearch.Location = New System.Drawing.Point(471, 277)
+        Me.btnSearch.Name = "btnSearch"
+        Me.btnSearch.Size = New System.Drawing.Size(75, 35)
+        Me.btnSearch.TabIndex = 35
+        Me.btnSearch.Text = "Search"
+        Me.btnSearch.UseVisualStyleBackColor = True
         '
         'Member
         '
@@ -496,8 +556,13 @@ Partial Class Member
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.FoodOrderingSystem.My.Resources.Resources.WhatsApp_Image_2020_07_18_at_7_05_23_PM
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(577, 577)
+        Me.ClientSize = New System.Drawing.Size(577, 643)
         Me.ContextMenuStrip = Me.ContextMenuStrip1
+        Me.Controls.Add(Me.btnSearch)
+        Me.Controls.Add(Me.btnNext)
+        Me.Controls.Add(Me.btnPrevious)
+        Me.Controls.Add(Me.btnLast)
+        Me.Controls.Add(Me.btnFirst)
         Me.Controls.Add(Me.GenderComboBox)
         Me.Controls.Add(Me.btnDel)
         Me.Controls.Add(Me.btnUpdate)
@@ -528,10 +593,10 @@ Partial Class Member
         CType(Me.TableBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableBindingNavigator.ResumeLayout(False)
         Me.TableBindingNavigator.PerformLayout()
-        CType(Me.TableDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.ContextMenuStrip1.ResumeLayout(False)
         CType(Me.TableBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MemberRegistrationDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TableDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ContextMenuStrip1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -577,4 +642,9 @@ Partial Class Member
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
     Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents GenderComboBox As ComboBox
+    Friend WithEvents btnFirst As Button
+    Friend WithEvents btnLast As Button
+    Friend WithEvents btnPrevious As Button
+    Friend WithEvents btnNext As Button
+    Friend WithEvents btnSearch As Button
 End Class

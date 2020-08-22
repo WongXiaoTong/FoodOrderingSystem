@@ -23,13 +23,13 @@ Partial Class Staff
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Staff))
         Dim IdLabel As System.Windows.Forms.Label
         Dim Label2 As System.Windows.Forms.Label
         Dim Label3 As System.Windows.Forms.Label
         Dim Label4 As System.Windows.Forms.Label
         Dim Label5 As System.Windows.Forms.Label
         Dim Label6 As System.Windows.Forms.Label
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Staff))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.StaffDataSet = New FoodOrderingSystem.staffDataSet()
@@ -37,17 +37,17 @@ Partial Class Staff
         Me.TableTableAdapter = New FoodOrderingSystem.staffDataSetTableAdapters.TableTableAdapter()
         Me.TableAdapterManager = New FoodOrderingSystem.staffDataSetTableAdapters.TableAdapterManager()
         Me.TableBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
+        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
+        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMovePreviousItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator = New System.Windows.Forms.ToolStripSeparator()
         Me.BindingNavigatorPositionItem = New System.Windows.Forms.ToolStripTextBox()
-        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
         Me.BindingNavigatorSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
         Me.TableBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
         Me.TableDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -66,6 +66,13 @@ Partial Class Staff
         Me.btnEdit = New System.Windows.Forms.Button()
         Me.btnUpdate = New System.Windows.Forms.Button()
         Me.btnDel = New System.Windows.Forms.Button()
+        Me.btnNext = New System.Windows.Forms.Button()
+        Me.btnPrevious = New System.Windows.Forms.Button()
+        Me.btnLast = New System.Windows.Forms.Button()
+        Me.btnFirst = New System.Windows.Forms.Button()
+        Me.btnSearch = New System.Windows.Forms.Button()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         IdLabel = New System.Windows.Forms.Label()
         Label2 = New System.Windows.Forms.Label()
         Label3 = New System.Windows.Forms.Label()
@@ -78,7 +85,74 @@ Partial Class Staff
         CType(Me.TableBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableBindingNavigator.SuspendLayout()
         CType(Me.TableDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ContextMenuStrip1.SuspendLayout()
         Me.SuspendLayout()
+        '
+        'IdLabel
+        '
+        IdLabel.AutoSize = True
+        IdLabel.BackColor = System.Drawing.Color.Transparent
+        IdLabel.Font = New System.Drawing.Font("Palatino Linotype", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        IdLabel.Location = New System.Drawing.Point(103, 78)
+        IdLabel.Name = "IdLabel"
+        IdLabel.Size = New System.Drawing.Size(31, 22)
+        IdLabel.TabIndex = 3
+        IdLabel.Text = "ID:"
+        '
+        'Label2
+        '
+        Label2.AutoSize = True
+        Label2.BackColor = System.Drawing.Color.Transparent
+        Label2.Font = New System.Drawing.Font("Palatino Linotype", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Label2.Location = New System.Drawing.Point(42, 115)
+        Label2.Name = "Label2"
+        Label2.Size = New System.Drawing.Size(92, 22)
+        Label2.TabIndex = 15
+        Label2.Text = "Staff Name:"
+        '
+        'Label3
+        '
+        Label3.AutoSize = True
+        Label3.BackColor = System.Drawing.Color.Transparent
+        Label3.Font = New System.Drawing.Font("Palatino Linotype", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Label3.Location = New System.Drawing.Point(42, 184)
+        Label3.Name = "Label3"
+        Label3.Size = New System.Drawing.Size(92, 22)
+        Label3.TabIndex = 16
+        Label3.Text = "IC Number:"
+        '
+        'Label4
+        '
+        Label4.AutoSize = True
+        Label4.BackColor = System.Drawing.Color.Transparent
+        Label4.Font = New System.Drawing.Font("Palatino Linotype", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Label4.Location = New System.Drawing.Point(38, 154)
+        Label4.Name = "Label4"
+        Label4.Size = New System.Drawing.Size(96, 22)
+        Label4.TabIndex = 17
+        Label4.Text = "Department:"
+        '
+        'Label5
+        '
+        Label5.AutoSize = True
+        Label5.BackColor = System.Drawing.Color.Transparent
+        Label5.Font = New System.Drawing.Font("Palatino Linotype", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Label5.Location = New System.Drawing.Point(52, 219)
+        Label5.Name = "Label5"
+        Label5.Size = New System.Drawing.Size(82, 22)
+        Label5.TabIndex = 18
+        Label5.Text = "Phone No:"
+        '
+        'Label6
+        '
+        Label6.AutoSize = True
+        Label6.BackColor = System.Drawing.Color.Transparent
+        Label6.Font = New System.Drawing.Font("Palatino Linotype", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Label6.Location = New System.Drawing.Point(56, 258)
+        Label6.Name = "Label6"
+        Label6.Size = New System.Drawing.Size(78, 22)
+        Label6.TabIndex = 19
+        Label6.Text = "Password:"
         '
         'Panel1
         '
@@ -142,6 +216,31 @@ Partial Class Staff
         Me.TableBindingNavigator.TabIndex = 1
         Me.TableBindingNavigator.Text = "BindingNavigator1"
         '
+        'BindingNavigatorAddNewItem
+        '
+        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
+        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(23, 22)
+        Me.BindingNavigatorAddNewItem.Text = "Add new"
+        '
+        'BindingNavigatorCountItem
+        '
+        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
+        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(35, 22)
+        Me.BindingNavigatorCountItem.Text = "of {0}"
+        Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
+        '
+        'BindingNavigatorDeleteItem
+        '
+        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
+        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(23, 22)
+        Me.BindingNavigatorDeleteItem.Text = "Delete"
+        '
         'BindingNavigatorMoveFirstItem
         '
         Me.BindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
@@ -174,17 +273,10 @@ Partial Class Staff
         Me.BindingNavigatorPositionItem.Text = "0"
         Me.BindingNavigatorPositionItem.ToolTipText = "Current position"
         '
-        'BindingNavigatorCountItem
-        '
-        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(35, 15)
-        Me.BindingNavigatorCountItem.Text = "of {0}"
-        Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
-        '
         'BindingNavigatorSeparator1
         '
-        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 6)
+        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator1"
+        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 25)
         '
         'BindingNavigatorMoveNextItem
         '
@@ -192,7 +284,7 @@ Partial Class Staff
         Me.BindingNavigatorMoveNextItem.Image = CType(resources.GetObject("BindingNavigatorMoveNextItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveNextItem.Name = "BindingNavigatorMoveNextItem"
         Me.BindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(23, 20)
+        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(23, 22)
         Me.BindingNavigatorMoveNextItem.Text = "Move next"
         '
         'BindingNavigatorMoveLastItem
@@ -201,38 +293,20 @@ Partial Class Staff
         Me.BindingNavigatorMoveLastItem.Image = CType(resources.GetObject("BindingNavigatorMoveLastItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveLastItem.Name = "BindingNavigatorMoveLastItem"
         Me.BindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(23, 20)
+        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(23, 22)
         Me.BindingNavigatorMoveLastItem.Text = "Move last"
         '
         'BindingNavigatorSeparator2
         '
-        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 6)
-        '
-        'BindingNavigatorAddNewItem
-        '
-        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
-        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorAddNewItem.Text = "Add new"
-        '
-        'BindingNavigatorDeleteItem
-        '
-        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
-        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(23, 20)
-        Me.BindingNavigatorDeleteItem.Text = "Delete"
+        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
+        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 25)
         '
         'TableBindingNavigatorSaveItem
         '
         Me.TableBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
         Me.TableBindingNavigatorSaveItem.Image = CType(resources.GetObject("TableBindingNavigatorSaveItem.Image"), System.Drawing.Image)
         Me.TableBindingNavigatorSaveItem.Name = "TableBindingNavigatorSaveItem"
-        Me.TableBindingNavigatorSaveItem.Size = New System.Drawing.Size(23, 23)
+        Me.TableBindingNavigatorSaveItem.Size = New System.Drawing.Size(23, 22)
         Me.TableBindingNavigatorSaveItem.Text = "Save Data"
         '
         'TableDataGridView
@@ -284,17 +358,6 @@ Partial Class Staff
         Me.DataGridViewTextBoxColumn6.HeaderText = "Phone No"
         Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
         '
-        'IdLabel
-        '
-        IdLabel.AutoSize = True
-        IdLabel.BackColor = System.Drawing.Color.Transparent
-        IdLabel.Font = New System.Drawing.Font("Palatino Linotype", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        IdLabel.Location = New System.Drawing.Point(103, 78)
-        IdLabel.Name = "IdLabel"
-        IdLabel.Size = New System.Drawing.Size(31, 22)
-        IdLabel.TabIndex = 3
-        IdLabel.Text = "ID:"
-        '
         'IdTextBox
         '
         Me.IdTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.TableBindingSource, "Id", True))
@@ -314,7 +377,7 @@ Partial Class Staff
         'IC_NumberTextBox
         '
         Me.IC_NumberTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.TableBindingSource, "IC Number", True))
-        Me.IC_NumberTextBox.Location = New System.Drawing.Point(140, 154)
+        Me.IC_NumberTextBox.Location = New System.Drawing.Point(140, 186)
         Me.IC_NumberTextBox.Name = "IC_NumberTextBox"
         Me.IC_NumberTextBox.Size = New System.Drawing.Size(119, 20)
         Me.IC_NumberTextBox.TabIndex = 8
@@ -322,7 +385,7 @@ Partial Class Staff
         'DepartmentTextBox
         '
         Me.DepartmentTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.TableBindingSource, "Department", True))
-        Me.DepartmentTextBox.Location = New System.Drawing.Point(140, 187)
+        Me.DepartmentTextBox.Location = New System.Drawing.Point(140, 154)
         Me.DepartmentTextBox.Name = "DepartmentTextBox"
         Me.DepartmentTextBox.Size = New System.Drawing.Size(119, 20)
         Me.DepartmentTextBox.TabIndex = 10
@@ -342,61 +405,6 @@ Partial Class Staff
         Me.Phone_NoTextBox.Name = "Phone_NoTextBox"
         Me.Phone_NoTextBox.Size = New System.Drawing.Size(119, 20)
         Me.Phone_NoTextBox.TabIndex = 14
-        '
-        'Label2
-        '
-        Label2.AutoSize = True
-        Label2.BackColor = System.Drawing.Color.Transparent
-        Label2.Font = New System.Drawing.Font("Palatino Linotype", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label2.Location = New System.Drawing.Point(42, 115)
-        Label2.Name = "Label2"
-        Label2.Size = New System.Drawing.Size(92, 22)
-        Label2.TabIndex = 15
-        Label2.Text = "Staff Name:"
-        '
-        'Label3
-        '
-        Label3.AutoSize = True
-        Label3.BackColor = System.Drawing.Color.Transparent
-        Label3.Font = New System.Drawing.Font("Palatino Linotype", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label3.Location = New System.Drawing.Point(42, 151)
-        Label3.Name = "Label3"
-        Label3.Size = New System.Drawing.Size(92, 22)
-        Label3.TabIndex = 16
-        Label3.Text = "IC Number:"
-        '
-        'Label4
-        '
-        Label4.AutoSize = True
-        Label4.BackColor = System.Drawing.Color.Transparent
-        Label4.Font = New System.Drawing.Font("Palatino Linotype", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label4.Location = New System.Drawing.Point(38, 184)
-        Label4.Name = "Label4"
-        Label4.Size = New System.Drawing.Size(96, 22)
-        Label4.TabIndex = 17
-        Label4.Text = "Department:"
-        '
-        'Label5
-        '
-        Label5.AutoSize = True
-        Label5.BackColor = System.Drawing.Color.Transparent
-        Label5.Font = New System.Drawing.Font("Palatino Linotype", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label5.Location = New System.Drawing.Point(52, 219)
-        Label5.Name = "Label5"
-        Label5.Size = New System.Drawing.Size(82, 22)
-        Label5.TabIndex = 18
-        Label5.Text = "Phone No:"
-        '
-        'Label6
-        '
-        Label6.AutoSize = True
-        Label6.BackColor = System.Drawing.Color.Transparent
-        Label6.Font = New System.Drawing.Font("Palatino Linotype", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label6.Location = New System.Drawing.Point(56, 258)
-        Label6.Name = "Label6"
-        Label6.Size = New System.Drawing.Size(78, 22)
-        Label6.TabIndex = 19
-        Label6.Text = "Password:"
         '
         'btnAdd
         '
@@ -442,6 +450,73 @@ Partial Class Staff
         Me.btnDel.Text = "Delete"
         Me.btnDel.UseVisualStyleBackColor = True
         '
+        'btnNext
+        '
+        Me.btnNext.BackgroundImage = Global.FoodOrderingSystem.My.Resources.Resources.WoodBackground54342
+        Me.btnNext.Font = New System.Drawing.Font("Palatino Linotype", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnNext.Location = New System.Drawing.Point(429, 154)
+        Me.btnNext.Name = "btnNext"
+        Me.btnNext.Size = New System.Drawing.Size(75, 35)
+        Me.btnNext.TabIndex = 38
+        Me.btnNext.Text = "Next"
+        Me.btnNext.UseVisualStyleBackColor = True
+        '
+        'btnPrevious
+        '
+        Me.btnPrevious.BackgroundImage = Global.FoodOrderingSystem.My.Resources.Resources.WoodBackground54342
+        Me.btnPrevious.Font = New System.Drawing.Font("Palatino Linotype", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnPrevious.Location = New System.Drawing.Point(429, 109)
+        Me.btnPrevious.Name = "btnPrevious"
+        Me.btnPrevious.Size = New System.Drawing.Size(75, 35)
+        Me.btnPrevious.TabIndex = 37
+        Me.btnPrevious.Text = "Previous"
+        Me.btnPrevious.UseVisualStyleBackColor = True
+        '
+        'btnLast
+        '
+        Me.btnLast.BackgroundImage = Global.FoodOrderingSystem.My.Resources.Resources.WoodBackground54342
+        Me.btnLast.Font = New System.Drawing.Font("Palatino Linotype", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnLast.Location = New System.Drawing.Point(318, 154)
+        Me.btnLast.Name = "btnLast"
+        Me.btnLast.Size = New System.Drawing.Size(75, 35)
+        Me.btnLast.TabIndex = 36
+        Me.btnLast.Text = "Last"
+        Me.btnLast.UseVisualStyleBackColor = True
+        '
+        'btnFirst
+        '
+        Me.btnFirst.BackgroundImage = Global.FoodOrderingSystem.My.Resources.Resources.WoodBackground54342
+        Me.btnFirst.Font = New System.Drawing.Font("Palatino Linotype", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnFirst.Location = New System.Drawing.Point(318, 109)
+        Me.btnFirst.Name = "btnFirst"
+        Me.btnFirst.Size = New System.Drawing.Size(75, 35)
+        Me.btnFirst.TabIndex = 35
+        Me.btnFirst.Text = "First"
+        Me.btnFirst.UseVisualStyleBackColor = True
+        '
+        'btnSearch
+        '
+        Me.btnSearch.BackgroundImage = Global.FoodOrderingSystem.My.Resources.Resources.WhatsApp_Image_2020_07_18_at_6_44_26_PM
+        Me.btnSearch.Font = New System.Drawing.Font("Palatino Linotype", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSearch.Location = New System.Drawing.Point(376, 59)
+        Me.btnSearch.Name = "btnSearch"
+        Me.btnSearch.Size = New System.Drawing.Size(75, 35)
+        Me.btnSearch.TabIndex = 39
+        Me.btnSearch.Text = "Search"
+        Me.btnSearch.UseVisualStyleBackColor = True
+        '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ExitToolStripMenuItem})
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(94, 26)
+        '
+        'ExitToolStripMenuItem
+        '
+        Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ExitToolStripMenuItem.Text = "&Exit"
+        '
         'Staff
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -449,6 +524,12 @@ Partial Class Staff
         Me.BackgroundImage = Global.FoodOrderingSystem.My.Resources.Resources.WhatsApp_Image_2020_07_18_at_7_05_23_PM
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(575, 514)
+        Me.ContextMenuStrip = Me.ContextMenuStrip1
+        Me.Controls.Add(Me.btnSearch)
+        Me.Controls.Add(Me.btnNext)
+        Me.Controls.Add(Me.btnPrevious)
+        Me.Controls.Add(Me.btnLast)
+        Me.Controls.Add(Me.btnFirst)
         Me.Controls.Add(Me.btnDel)
         Me.Controls.Add(Me.btnUpdate)
         Me.Controls.Add(Me.btnEdit)
@@ -480,6 +561,7 @@ Partial Class Staff
         Me.TableBindingNavigator.ResumeLayout(False)
         Me.TableBindingNavigator.PerformLayout()
         CType(Me.TableDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ContextMenuStrip1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -521,4 +603,11 @@ Partial Class Staff
     Friend WithEvents btnEdit As Button
     Friend WithEvents btnUpdate As Button
     Friend WithEvents btnDel As Button
+    Friend WithEvents btnNext As Button
+    Friend WithEvents btnPrevious As Button
+    Friend WithEvents btnLast As Button
+    Friend WithEvents btnFirst As Button
+    Friend WithEvents btnSearch As Button
+    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
+    Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
 End Class
