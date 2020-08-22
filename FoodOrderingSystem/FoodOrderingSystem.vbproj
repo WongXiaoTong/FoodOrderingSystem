@@ -141,14 +141,6 @@
     <Compile Include="Member.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MemberDataSet.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MemberDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="MemberDataSet.vb">
-      <DependentUpon>MemberDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="memberRegistrationDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -181,14 +173,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-    <Compile Include="SatffDataSet.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SatffDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="SatffDataSet.vb">
-      <DependentUpon>SatffDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Staff.Designer.vb">
       <DependentUpon>Staff.vb</DependentUpon>
@@ -262,17 +246,6 @@
     <None Include="CalculationDataSet.xss">
       <DependentUpon>CalculationDataSet.xsd</DependentUpon>
     </None>
-    <None Include="MemberDataSet.xsc">
-      <DependentUpon>MemberDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="MemberDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>MemberDataSet.Designer.vb</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="MemberDataSet.xss">
-      <DependentUpon>MemberDataSet.xsd</DependentUpon>
-    </None>
     <None Include="memberRegistrationDataSet.xsc">
       <DependentUpon>memberRegistrationDataSet.xsd</DependentUpon>
     </None>
@@ -295,17 +268,6 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
-    <None Include="SatffDataSet.xsc">
-      <DependentUpon>SatffDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="SatffDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>SatffDataSet.Designer.vb</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="SatffDataSet.xss">
-      <DependentUpon>SatffDataSet.xsd</DependentUpon>
-    </None>
     <None Include="staffDataSet.xsc">
       <DependentUpon>staffDataSet.xsd</DependentUpon>
     </None>
@@ -341,10 +303,6 @@
     <None Include="Resources\WoodBackground54342.jpg" />
     <None Include="Resources\WhatsApp Image 2020-07-18 at 6.44.26 PM.jpeg" />
     <None Include="Resources\WhatsApp Image 2020-07-09 at 1.18.34 PM.jpeg" />
-    <Content Include="Satff.mdf" />
-    <Content Include="Satff_log.ldf">
-      <DependentUpon>Satff.mdf</DependentUpon>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">

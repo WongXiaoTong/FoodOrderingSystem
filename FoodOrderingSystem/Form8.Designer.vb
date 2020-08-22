@@ -46,7 +46,6 @@ Partial Class Form8
         Me.Order_TimeTextBox = New System.Windows.Forms.TextBox()
         Me.Full_NameTextBox = New System.Windows.Forms.TextBox()
         Me.MemberBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.MemberDataSet = New FoodOrderingSystem.MemberDataSet()
         Me.IdTextBox = New System.Windows.Forms.TextBox()
         Me.Ref_NoTextBox = New System.Windows.Forms.TextBox()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
@@ -91,8 +90,6 @@ Partial Class Form8
         Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.CalculationBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
-        Me.MemberTableAdapter = New FoodOrderingSystem.MemberDataSetTableAdapters.MemberTableAdapter()
-        Me.TableAdapterManager1 = New FoodOrderingSystem.MemberDataSetTableAdapters.TableAdapterManager()
         Me.ListBox1 = New System.Windows.Forms.ListBox()
         ChangeLabel = New System.Windows.Forms.Label()
         Cash_Label = New System.Windows.Forms.Label()
@@ -741,14 +738,7 @@ Partial Class Form8
         '
         'MemberTableAdapter
         '
-        Me.MemberTableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager1
-        '
-        Me.TableAdapterManager1.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager1.MemberTableAdapter = Me.MemberTableAdapter
-        Me.TableAdapterManager1.UpdateOrder = FoodOrderingSystem.MemberDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        '
+
         'ListBox1
         '
         Me.ListBox1.FormattingEnabled = True
@@ -833,10 +823,8 @@ Partial Class Form8
     Friend WithEvents Discount_Label As Label
     Friend WithEvents OrderSubTotalLabel As Label
     Friend WithEvents TotalQuantityLabel As Label
-    Friend WithEvents MemberDataSet As MemberDataSet
+    Friend WithEvents MemberDataSet As memberRegistrationDataSet
     Friend WithEvents MemberBindingSource As BindingSource
-    Friend WithEvents MemberTableAdapter As MemberDataSetTableAdapters.MemberTableAdapter
-    Friend WithEvents TableAdapterManager1 As MemberDataSetTableAdapters.TableAdapterManager
     Friend WithEvents Full_NameTextBox As TextBox
     Friend WithEvents IdTextBox As TextBox
     Friend WithEvents btn_Calculate As Button
